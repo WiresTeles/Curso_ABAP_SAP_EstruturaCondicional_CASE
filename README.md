@@ -7,17 +7,21 @@ SELECTION-SCREEN BEGIN OF BLOCK b1.
 SELECTION-SCREEN END OF BLOCK b1.
 
 START-OF-SELECTION.
+DATA ld_descricao TYPE string.
+
   CASE p_cat.
     WHEN 'A'.
-      WRITE 'MOTO'.
+      ld_descricao = 'MOTO'.
     WHEN 'B'.
-      WRITE 'CARRO'.
+      ld_descricao ='CARRO'.
     WHEN 'C'.
-      WRITE 'VEÍCULOS DE CARGA'.
+      ld_descricao =  'VEÍCULOS DE CARGA'.
     WHEN 'D'.
-      WRITE 'TRANSPORTE DE PASSAGEIRO'.
+      ld_descricao ='TRANSPORTE DE PASSAGEIRO'.
     WHEN 'E'.
-      WRITE 'TRANSPORTE DE CAMINHÕES'.
+      ld_descricao ='TRANSPORTE DE CAMINHÕES'.
     WHEN OTHERS.
-      WRITE 'CATEGORIA INVÁLIDA'.
+      ld_descricao ='CATEGORIA INVÁLIDA'.
   ENDCASE.
+
+  WRITE ld_descricao.
